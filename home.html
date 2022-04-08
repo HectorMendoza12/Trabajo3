@@ -135,7 +135,7 @@ function update ()
 {
     if (gameOver)
     {
-        this.add.text(300, 400, 'GAME OVER', { fontSize: '50px', fill: '#000' });
+        this.add.text(250, 300, 'GAME OVER', { fontSize: '50px', fill: '#000' });
         return;
     }
 
@@ -195,11 +195,11 @@ function collectStar (player, star)
 
     }
 
-    if (stars.countActive(true) === 300)
+    if (score === 300)
     {
         this.physics.pause();
 
-        player.setTint(0xff0000);
+        player.setTint(0x00ff00);
 
         player.anims.play('turn');
 
