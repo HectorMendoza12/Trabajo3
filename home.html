@@ -39,6 +39,7 @@ var platforms;
 var cursors;
 var score = 0;
 var gameOver = false;
+var gameComplete = false;
 var scoreText;
 
 var game = new Phaser.Game(config);
@@ -134,7 +135,13 @@ function update ()
 {
     if (gameOver)
     {
-        this.add.text(400, 300, 'GAME OVER', { fontSize: '50px', fill: '#000' });
+        this.add.text(300, 400, 'GAME OVER', { fontSize: '50px', fill: '#000' });
+        return;
+    }
+
+    if (gameComplete)
+    {
+        this.add.text(300, 400, 'Has completado el juego!', { fontSize: '50px', fill: '#000' });
         return;
     }
 
@@ -187,6 +194,18 @@ function collectStar (player, star)
         bomb.allowGravity = false;
 
     }
+
+    if (stars.countActive(true) === 300)
+    {
+        this.physics.pause();
+
+        player.setTint(0xff0000);
+
+        player.anims.play('turn');
+
+        gameComplete = true;
+    }
+
 }
 
 function hitBomb (player, bomb)
