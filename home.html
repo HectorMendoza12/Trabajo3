@@ -122,7 +122,7 @@ function create ()
 
     //  The score
     scoreText = this.add.text(5, 16, 'Puntos: 0', { fontSize: '30px', fill: '#000' });
-    instrucciones = this.add.text(6, 45, 'Recolecta monedas para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#000' });
+    instrucciones = this.add.text(6, 45, 'Recolecta hot cakes para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#000' });
     
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
@@ -147,7 +147,7 @@ function update ()
     if (gameComplete)
     {
         this.add.text(110, 280, '¡Has completado el juego!', { fontSize: '40px', fill: '#000' });
-        this.add.image(80, 310, 'trophy');
+        this.add.image(300, 350, 'trophy');
         return;
     }
 
