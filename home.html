@@ -52,6 +52,7 @@ function preload ()
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
+    this.load.image('trophy', 'assets/trofeo.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
 
@@ -146,6 +147,7 @@ function update ()
     if (gameComplete)
     {
         this.add.text(110, 280, '¡Has completado el juego!', { fontSize: '40px', fill: '#000' });
+        this.add.image(80, 310, 'trophy');
         return;
     }
 
@@ -190,7 +192,7 @@ function collectStar (player, star)
         });
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-        enemigos = this.add.text(6, 55, 'Evita a los enemigos o morirás', { fontSize: '15px', fill: '#000' });
+        enemigos = this.add.text(6, 62, 'Evita a los enemigos o morirás.', { fontSize: '15px', fill: '#000' });
 
         var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
