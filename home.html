@@ -147,7 +147,7 @@ function update ()
     if (gameComplete)
     {
         this.add.text(110, 280, '¡Has completado el juego!', { fontSize: '40px', fill: '#000' });
-        this.add.image(450, 350, 'trophy');
+        this.add.image(425, 350, 'trophy');
         return;
     }
 
@@ -194,7 +194,7 @@ function collectStar (player, star)
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
         enemigos = this.add.text(6, 62, 'Evita a los enemigos o morirás.', { fontSize: '15px', fill: '#000' });
 
-        var bomb = bombs.create(x, 30, 'bomb');
+        var bomb = bombs.create(x, 80, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
         bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
