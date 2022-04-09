@@ -74,9 +74,9 @@ function create ()
 
     //  Now let's create some ledges
     platforms.create(520, 320, 'ground');
-    platforms.create(22, 210, 'ground');
+    platforms.create(5, 210, 'ground');
     platforms.create(50, 410, 'ground');
-    platforms.create(640, 150, 'ground');
+    platforms.create(740, 150, 'ground');
 
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
@@ -113,7 +113,7 @@ function create ()
     stars = this.physics.add.group({
         key: 'star',
         repeat: 8,
-        setXY: { x: 12, y: 0, stepX: 70 }
+        setXY: { x: 12, y: 0, stepX: 120 }
     });
 
     stars.children.iterate(function (child) {
