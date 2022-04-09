@@ -63,7 +63,7 @@ function create ()
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
     this.add.image(400, 410, 'mountains');
-    this.add.image(400, 125, 'cloud');
+    this.add.image(500, 125, 'cloud');
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = this.physics.add.staticGroup();
@@ -73,9 +73,9 @@ function create ()
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
     //  Now let's create some ledges
-    platforms.create(460, 320, 'ground');
-    platforms.create(50, 210, 'ground');
-    platforms.create(36, 410, 'ground');
+    platforms.create(520, 320, 'ground');
+    platforms.create(22, 210, 'ground');
+    platforms.create(50, 410, 'ground');
     platforms.create(640, 150, 'ground');
 
     // The player and its settings
