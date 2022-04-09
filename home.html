@@ -51,6 +51,7 @@ function preload ()
     this.load.image('sky', 'assets/sky.png');
     this.load.image('mountains', 'assets/mm.png');
     this.load.image('ground', 'assets/tileset.png');
+    this.load.image('cloud', 'assets/cloud.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
     this.load.image('trophy', 'assets/trofeo.png');
@@ -61,7 +62,8 @@ function create ()
 {
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
-    this.add.image(400, 300, 'mountains');
+    this.add.image(400, 700, 'mountains');
+    this.add.image(400, 50, 'cloud');
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = this.physics.add.staticGroup();
