@@ -49,7 +49,8 @@ var game = new Phaser.Game(config);
 function preload ()
 {
     this.load.image('sky', 'assets/sky.jpg');
-    this.load.image('ground', 'assets/platform.png');
+    this.load.image('mountains', 'assets/mm.png');
+    this.load.image('ground', 'assets/tileset.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
     this.load.image('trophy', 'assets/trofeo.png');
@@ -122,7 +123,7 @@ function create ()
 
     //  The score
     scoreText = this.add.text(5, 16, 'Puntos: 0', { fontSize: '30px', fill: '#ffffff' });
-    instrucciones = this.add.text(6, 45, 'Recolecta hot cakes para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#ffffff' });
+    instrucciones = this.add.text(6, 45, 'Recolecta monedas para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#ffffff' });
     
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
