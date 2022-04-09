@@ -77,6 +77,7 @@ function create ()
     platforms.create(5, 210, 'ground');
     platforms.create(50, 410, 'ground');
     platforms.create(740, 150, 'ground');
+    platforms.create(780, 470, 'ground');
 
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
@@ -113,7 +114,7 @@ function create ()
     stars = this.physics.add.group({
         key: 'star',
         repeat: 8,
-        setXY: { x: 12, y: 0, stepX: 99 }
+        setXY: { x: 12, y: 0, stepX: 90 }
     });
 
     stars.children.iterate(function (child) {
@@ -152,7 +153,7 @@ function update ()
     if (gameComplete)
     {
         this.add.text(110, 280, '¡Has completado el juego!', { fontSize: '40px', fill: '#000' });
-        this.add.image(425, 335, 'trophy');
+        this.add.image(410, 335, 'trophy');
         return;
     }
 
