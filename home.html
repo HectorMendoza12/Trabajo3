@@ -121,8 +121,8 @@ function create ()
     bombs = this.physics.add.group();
 
     //  The score
-    scoreText = this.add.text(5, 16, 'Puntos: 0', { fontSize: '30px', fill: '#000' });
-    instrucciones = this.add.text(6, 45, 'Recolecta hot cakes para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#000' });
+    scoreText = this.add.text(5, 16, 'Puntos: 0', { fontSize: '30px', fill: '#ffffff' });
+    instrucciones = this.add.text(6, 45, 'Recolecta hot cakes para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#ffffff' });
     
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
@@ -147,7 +147,7 @@ function update ()
     if (gameComplete)
     {
         this.add.text(110, 280, '¡Has completado el juego!', { fontSize: '40px', fill: '#000' });
-        this.add.image(425, 350, 'trophy');
+        this.add.image(425, 335, 'trophy');
         return;
     }
 
@@ -192,7 +192,7 @@ function collectStar (player, star)
         });
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-        enemigos = this.add.text(6, 62, 'Evita a los enemigos o morirás.', { fontSize: '15px', fill: '#000' });
+        enemigos = this.add.text(6, 62, 'Evita a los enemigos o morirás.', { fontSize: '15px', fill: '#ff0000' });
 
         var bomb = bombs.create(x, 15, 'bomb');
         bomb.setBounce(1);
