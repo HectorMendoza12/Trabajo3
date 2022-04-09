@@ -194,7 +194,7 @@ function collectStar (player, star)
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
         enemigos = this.add.text(6, 62, 'Evita a los enemigos o morirás.', { fontSize: '15px', fill: '#000' });
 
-        var bomb = bombs.create(x, 80, 'bomb');
+        var bomb = bombs.create(x, 15, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
         bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
