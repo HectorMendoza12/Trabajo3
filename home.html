@@ -42,6 +42,7 @@ var gameOver = false;
 var gameComplete = false;
 var scoreText;
 var instrucciones;
+var enemigos;
 
 var game = new Phaser.Game(config);
 
@@ -120,8 +121,8 @@ function create ()
 
     //  The score
     scoreText = this.add.text(5, 16, 'Puntos: 0', { fontSize: '30px', fill: '#000' });
-    instrucciones = this.add.text(5, 45, 'Recolecta monedas para obtener puntos, consigue 300 puntos para ganar', { fontSize: '15px', fill: '#000' });
-
+    instrucciones = this.add.text(6, 45, 'Recolecta monedas para obtener puntos, consigue 300 puntos para ganar.', { fontSize: '15px', fill: '#000' });
+    
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
@@ -138,7 +139,7 @@ function update ()
     if (gameOver)
     {
         this.add.text(250, 280, 'GAME OVER', { fontSize: '50px', fill: '#000' });
-        this.add.text(165, 340, 'Recarga la página para reintentar', { fontSize: '21px', fill: '#000' });
+        this.add.text(175, 340, 'Recarga la página para reintentar', { fontSize: '21px', fill: '#000' });
         return;
     }
 
@@ -189,6 +190,7 @@ function collectStar (player, star)
         });
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+        enemigos = this.add.text(6, 55, 'Evita a los enemigos o morirás', { fontSize: '15px', fill: '#000' });
 
         var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
